@@ -1,6 +1,7 @@
 #ifndef BINTREEFUNC_H
 #define BINTREEFUNC_H
 #include <iostream>
+#include <queue>
 #include "treenode.h"
 
 using namespace std;
@@ -42,10 +43,10 @@ template <class T> // подсчет кол-ва листьев в дереве 
 int leafCount(treeNode<T>* root);
 
 template <class T> // вывод дерева по уровням
-void printLevelOrder(const treeNode<T>* root);
+void printLevelOrder(const treeNode<T>* root, int height);
 
 template <class T> // печатает конкретный уровень
-void printGivenLevel(const treeNode<T>* root, unsigned level);
+void printGivenLevel(const treeNode<T>* root, int level);
 
 #include "bintreefunc.cpp"
 #endif // BINTREEFUNC_H

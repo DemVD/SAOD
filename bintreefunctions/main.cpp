@@ -20,4 +20,6 @@ int main(){
     int c = leafCount(root);
     cout<<endl<<"Leaf count: "<<c<<endl;
 
+    printLevelOrder(root, d);
+
 }

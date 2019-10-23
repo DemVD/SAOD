@@ -148,13 +148,25 @@ int leafCount(treeNode<T>* root){
 }
 
 template <class T> // вывод дерева по уровням
-void printLevelOrder(const treeNode<T>* root){
-
+void printLevelOrder(const treeNode<T>* root, int height){
+    for(int i=1;i<=height+1;i++){ // для включения последнего уровня в отображение height+1
+        printGivenLevel(root,i);
+        cout<<endl;
+    }
 }
 
 template <class T> // печатает конкретный уровень
-void printGivenLevel(const treeNode<T>* root, unsigned level){
-
+void printGivenLevel(const treeNode<T>* root, int level){
+    if(root == nullptr){
+        return;
+    }
+    if(level == 1){
+        cout<<root->_data<<" ";
+    }
+    else if(level > 1){
+        printGivenLevel(root->left(), level-1);
+        printGivenLevel(root->right(), level-1);
+    }
 }
 
 /*
